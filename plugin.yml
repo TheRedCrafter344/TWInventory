@@ -1,0 +1,26 @@
+name: TWInventory
+main: me.johnnypixelz.TWInventory.PlayerWeight
+version: 0.1
+author: JohnnyPixelz
+description: Add weight to players
+
+commands:
+   weight:
+      description: Displays your Weight.
+      
+permissions:
+   twi.*:
+     description: Gives access to all TWInventory commands
+     default: op
+     children:
+       twi.debug: true
+       twi.reload: true
+   twi.debug:
+     description: Allow use of the debug command
+     default: false
+   twi.reload:
+     description: Allow the reload of TWInventory
+     default: false
+   twi.bypass:
+     description: Player doesn't get speed changed
+     default: false
