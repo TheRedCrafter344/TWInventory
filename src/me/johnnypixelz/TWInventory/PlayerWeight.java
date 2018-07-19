@@ -7,14 +7,14 @@ import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
-import org.bukkit.craftbukkit.v1_8_R3.entity.CraftPlayer;
+import org.bukkit.craftbukkit.v1_10_R1.entity.CraftPlayer;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import me.johnnypixelz.TWInventory.Listener.DebugListener;
 import me.johnnypixelz.TWInventory.Listener.PlayerListener;
-import net.minecraft.server.v1_8_R3.ChatComponentText;
-import net.minecraft.server.v1_8_R3.PacketPlayOutChat;
+import net.minecraft.server.v1_10_R1.ChatComponentText;
+import net.minecraft.server.v1_10_R1.PacketPlayOutChat;
 
 public class PlayerWeight extends JavaPlugin {
 	public boolean debug;
