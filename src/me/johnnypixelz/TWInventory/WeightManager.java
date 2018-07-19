@@ -37,11 +37,6 @@ public class WeightManager {
 			ItemStack o = arrayOfItemStack[j];
 			weight += ItemWeight.getItemWeight(o);
 		}
-		i = (arrayOfItemStack = p.getInventory().getArmorContents()).length;
-		for (int j = 0; j < i; j++) {
-			ItemStack o = arrayOfItemStack[j];
-			weight += ItemWeight.getItemWeight(o);
-		}
 		return weight;
 	}
 
