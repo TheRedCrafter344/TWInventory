@@ -25,6 +25,7 @@ public class PlayerWeight extends JavaPlugin {
 		plugin = this;
 		saveDefaultConfig();
 		reloadConfig();
+                TWIConfig.readConfig(this);
 		if (getConfig().getBoolean("Debug")) {
 			new DebugListener(this);
 		}
@@ -47,7 +48,7 @@ public class PlayerWeight extends JavaPlugin {
 			DecimalFormatSymbols symbol = new DecimalFormatSymbols();
 			symbol.setDecimalSeparator('.');
 
-			String message = ChatColor.translateAlternateColorCodes('&', plugin.getConfig().getString("ActionBar"))
+			String message = ChatColor.translateAlternateColorCodes('&', TWIConfig.ACTION_BAR_MSG)
 					.replace("<weight>", new DecimalFormat("#.##", symbol).format(weight))
 					.replace("<maxweight>", String.valueOf(wM.getMaxW())).replace("<weightpercent>",
 							String.valueOf((int) (wM.calculateWeightPercentage(weight, player).floatValue() * 100.0F)));
@@ -72,8 +73,8 @@ public class PlayerWeight extends JavaPlugin {
 				DecimalFormatSymbols symbol = new DecimalFormatSymbols();
 				symbol.setDecimalSeparator('.');
 
-				String message = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Prefix"))
-						+ translateColor(getConfig().getString("WeightCommand"))
+				String message = ChatColor.translateAlternateColorCodes('&', TWIConfig.PREFIX)
+						+ translateColor(TWIConfig.CMD_MSG)
 								.replace("<weight>", new DecimalFormat("#.##", symbol).format(weight))
 								.replace("<maxweight>", String.valueOf(this.wM.getMaxW()))
 								.replace("<weightpercent>", String.valueOf(
@@ -98,7 +99,7 @@ public class PlayerWeight extends JavaPlugin {
 						return true;
 					}
 					if (!getConfig().getBoolean("Debug")) {
-						p.sendMessage(translateColor(getConfig().getString("DisabledDebug Message")));
+						p.sendMessage(translateColor(TWIConfig.NODEBUG_MSG));
 						return true;
 					}
 				}
@@ -111,12 +112,12 @@ public class PlayerWeight extends JavaPlugin {
 
 						this.wM.handler(player);
 					}
-					sender.sendMessage(translateColor(getConfig().getString("Reload Message")));
+					sender.sendMessage(translateColor(TWIConfig.RELOAD_MSG));
 					return true;
 				}
 			}
 		}
-		sender.sendMessage(translateColor(getConfig().getString("NoPerm Message")));
+		sender.sendMessage(translateColor(TWIConfig.NOPERM_MSG));
 		return false;
 	}
 
