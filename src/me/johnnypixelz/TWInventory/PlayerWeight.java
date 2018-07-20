@@ -31,6 +31,8 @@ public class PlayerWeight extends JavaPlugin {
 		}
 		new PlayerListener(this);
 		this.wM = new WeightManager(this);
+		
+                for(Player p : getServer().getOnlinePlayers()) this.wM.handler(p);
 
 		if (plugin.getConfig().getBoolean("Enable Action Bar")) {
 			Bukkit.getServer().getScheduler().scheduleSyncRepeatingTask(this, new Runnable() {
@@ -108,10 +110,6 @@ public class PlayerWeight extends JavaPlugin {
 					getServer().getPluginManager().disablePlugin(this);
 					getServer().getPluginManager().enablePlugin(this);
 
-					for (Player player : getServer().getOnlinePlayers()) {
-
-						this.wM.handler(player);
-					}
 					sender.sendMessage(translateColor(TWIConfig.RELOAD_MSG));
 					return true;
 				}
