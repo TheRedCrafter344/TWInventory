@@ -51,7 +51,7 @@ public class PlayerListener implements Listener {
 
 	@EventHandler
 	public void onPlayerExpGain(PlayerExpChangeEvent event) {
-		if (!this.plugin.getConfig().getBoolean("Enable XP Bar", true)) {
+		if (!TWIConfig.USE_XP_BAR) {
 			return;
 		}
 		event.setAmount(0);
