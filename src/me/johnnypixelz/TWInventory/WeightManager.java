@@ -11,7 +11,6 @@ public class WeightManager {
 	
 	public WeightManager(PlayerWeight plugin) {
 		this.plugin = plugin;
-		//loadConfigVariables();
 	}
 
 	public double getWeight(Player p) {
@@ -45,10 +44,7 @@ public class WeightManager {
 			
 			if (configweight <= weight) {
 				setNewSpeed(Float.parseFloat(parts[1]));
-				
-				p.sendMessage("setting new speed to " + getNewSpeed());
 			} else {
-				p.sendMessage("setting your speed to " + getNewSpeed());
 				p.setWalkSpeed(getNewSpeed()/5);
 				calculateWeightPercentage(weight, p);
 				break;
