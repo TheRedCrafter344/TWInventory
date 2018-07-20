@@ -10,22 +10,13 @@ Reload Message: '&3TWInventory Reloaded!'
 NoPerm Message: '&cYou do not have permission for this command!'
 DisabledDebug Message: '&cDebug not enabled! --> (Config)'
 
-Less And Equal To:
-  Percentage: 24
-  SpeedPercent: 105
-  Message: '&2 Your weight is low'
-Between:
-  Percentage: 25,49
-  SpeedPercent: 95
-  Message: '&6 Getting heavier'
-Between1:
-  Percentage: 50,100  
-  SpeedPercent: 70
-  Message: '&c Getting much heavier'
-Bigger Than:
-  Percentage: 100
-  SpeedPercent: 50
-  Message: '&4 You are so heavy that you're unable to even jump'
+Weights:
+  - 0 1.0
+  - 20 0.7
+  - 40 0.6
+  - 60 0.5
+  - 80 0.3
+  - 90 0.1
 
 ANVIL: 2
 APPLE: 0.3
