@@ -34,7 +34,7 @@ public class WeightManager {
 			return;
 		}
 		
-		List<String> weightlist = (List<String>) this.plugin.getConfig().getStringList("Weights");
+		List<String> weightlist = TWIConfig.WEIGHT_LEVELS;
 		
 		Double weight = getWeight(p);
 		
@@ -60,7 +60,7 @@ public class WeightManager {
 
 	public Float calculateWeightPercentage(double weight, Player p) {
 		float weightPercent = (float) weight / getMaxW();
-		if (this.plugin.getConfig().getBoolean("Enable XP Bar", true)) {
+		if (TWIConfig.USE_XP_BAR) {
 			setExp(Float.valueOf(weightPercent), p);
 		}
 		return Float.valueOf(weightPercent);
@@ -75,7 +75,7 @@ public class WeightManager {
 	}
 
 	public int getMaxW() {
-		return this.plugin.getConfig().getInt("Max Weight");
+		return (int) TWIConfig.MAX_WEIGHT;
 	}
 
 	public float speed(double percent) {
