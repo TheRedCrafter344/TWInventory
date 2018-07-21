@@ -11,6 +11,7 @@ import org.bukkit.event.player.PlayerPickupItemEvent;
 
 import me.johnnypixelz.TWInventory.PlayerWeight;
 import me.johnnypixelz.TWInventory.WeightManager;
+import me.johnnypixelz.TWInventory.TWIConfig;
 
 public class PlayerListener implements Listener {
 	private PlayerWeight plugin;
